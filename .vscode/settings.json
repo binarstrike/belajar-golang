@@ -1,0 +1,17 @@
+{
+    "editor.fontFamily": "FiraCode Nerd Font Mono SemiBold",
+    "editor.fontSize": 13,
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "GitHub Dark",
+    "[go]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "files.eol": "\n",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "go.inlayHints.assignVariableTypes": true,
+    "go.inlayHints.parameterNames": true,
+}
