@@ -5,13 +5,13 @@ import "fmt"
 func main() {
 	fooNumber := 10000000000000
 	barNumber := fmt.Sprint(fooNumber) // konversi angka ke string
-	println(barNumber)
+	fmt.Println(barNumber)
 
 	name := "Binar"
 	b := name[0] // variabel ini akan memiliki nilai sebuah karakter `B` dalam bentuk byte yaitu 66
-	println(b)
+	fmt.Println(b)
 	bString := string(b) // perlu dilakukan konversi dari byte ke string dengan method atau fungsi `string`
-	println(bString)
+	fmt.Println(bString)
 
 	var angka1_int32 int32 = 200
 	var angka1_int64 int64 = int64(angka1_int32)
@@ -21,5 +21,5 @@ func main() {
 	// dari -128 sampai 127 dan diberi data yang memiliki data diluar jangkauan tersebut maka akan nilai akan terus mengulang
 	// ketika sudah mencapai panjang maksimum kemudian ke nilai yang terkecil lagi dan seterusnya
 
-	println(fmt.Sprintf("\n\n%d\n%d\n%d", angka1_int32, angka1_int64, angka1_int8))
+	fmt.Println(fmt.Sprintf("\n\n%d\n%d\n%d", angka1_int32, angka1_int64, angka1_int8))
 }
