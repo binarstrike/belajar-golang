@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "windows": {
+    "options": {
+      "shell": {
+        "executable": "pwsh",
+        "args": [
+          "-NoProfile",
+          "-Command"
+        ]
+      }
+    }
+  },
+  "tasks": [
+    {
+      "label": "Build and run",
+      "type": "shell",
+      "command": "go build -o ./build/${fileBasenameNoExtension}.exe ${file} && ./build/${fileBasenameNoExtension}.exe",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "options": {
+        "statusbar": {
+          "icon": {
+            "id": "run"
+          },
+          "backgroundColor": "statusBarItem.warningBackground",
+          "filePattern": "\\.go$"
+        }
+      }
+    }
+  ]
+}
