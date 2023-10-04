@@ -25,3 +25,6 @@
 | float64 | 2.23 * 10^-308 | 1.80x10^308 |
 | complex32 | complex numbers with float32 real and imaginary parts. |
 | complex64 | complex numbers with float64 real and imaginary parts. |
+
+### Array Slice
+![Array Slice Screenshot](img/Screenshot%202023-09-29%20163503.png)
