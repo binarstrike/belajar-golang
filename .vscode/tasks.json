@@ -15,10 +15,14 @@
     {
       "label": "Build and run",
       "type": "shell",
-      "command": "go build -o ./build/${fileBasenameNoExtension}.exe ${file} && ./build/${fileBasenameNoExtension}.exe",
+      "command": "if ($(echo \"${fileExtname}\") -ne $(echo \".go\")) { exit 1 } else { go build -o ${cwd}\\build\\${fileBasenameNoExtension}.exe ${file} && ${cwd}\\build\\${fileBasenameNoExtension}.exe }",
       "group": {
         "kind": "build",
         "isDefault": true
+      },
+      "icon": {
+        "color": "terminal.ansiCyan",
+        "id": "terminal-powershell"
       },
       "options": {
         "statusbar": {
