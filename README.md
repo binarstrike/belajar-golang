@@ -30,7 +30,7 @@
 ![Array Slice Screenshot](https://www.plantuml.com/plantuml/png/XP5DIyGm48Rl-HNZtWjsT-r-WBA2U11KqADuoDPf6qsJCfagY_ZVJSQiY2vuVDu-VPd9R09huh6tweWxx17qMoWyQTUYyjjdh1aqaTx1km8uXbEON6atQZAJo6NYIzpIFfYcu5eJSg9PelE1Z4qqbsyeteaKZKwW-W8hi91_sZ7m618l4z_ZmDXlaLAoIidj2_lCfKnrur-_ZLBcki2Gam-rNoLOKsCfkm0CtZX6YkvSsA9hkOiu4wpre6l3knWiVrTC_rHK_rHKgS9vHc0_W6_oA4eUzs6-NZmgT4-GZ0FUD7lLUlNJo-iKPDgEYxDygJNSOOE4haQLfoqiDeU5JMoBr_y4)
 
 ## Pointer
-### [pointer.go](https://github.com/binarstrike/belajar-golang/blob/main/src/pointer/pointer.go)
+### [pointer.go](https://github.com/binarstrike/belajar-golang/blob/main/project/pointer/pointer.go)
 ### Pass by value
 ![Pass by value](https://www.plantuml.com/plantuml/png/jO_1IWCn48RlynJZtlVGFGfAgoS5GV09ffjf6aaoPJ9nBUAxkvNksWMl_K_9__7n9-jYf5PJX1lRSsAaeRIYb3q3nIX32fyXUu2THCUApGidqME3Nu1ZPFlElU76EULILkVsbCTWHxp3jxgbxEVsLUKZv9v7yam3uGCfsPyZDPkUjAVi97C9zCk-uP-nxcfZuzmkHCQ6pjzga0fEboNhBba7C9smhOVsVduhJFQoNy5cxZNulLqeU8kz708xM7DsDSKV)
 
