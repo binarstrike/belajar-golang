@@ -79,7 +79,7 @@ func mengubahSeluruhDataPadaSatuPointer() {
 }
 
 func pointerPadaFunction() {
-	// secara default nilai apapun yang di pasing ke parameter fungsi adalah duplikat dari nilai sebenarnya
+	// secara default nilai apapun yang di passing ke parameter fungsi adalah duplikat dari nilai sebenarnya
 	// jadi variabel yang di passing ke parameter tersebut tidak akan berubah nilainya.
 	// untuk melakukan perubahan pada variabel atau nilai yang di passing ke parameter fungsi caranya dengan
 	// menambahkan * pada tipe data parameter
