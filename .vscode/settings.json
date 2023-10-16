@@ -13,5 +13,6 @@
         }
     },
     "go.inlayHints.assignVariableTypes": true,
-    "go.inlayHints.constantValues": true
+    "go.inlayHints.constantValues": true,
+    "go.inferGopath": true
 }
