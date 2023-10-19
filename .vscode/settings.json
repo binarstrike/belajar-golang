@@ -2,7 +2,6 @@
     "editor.fontFamily": "FiraCode Nerd Font Mono SemiBold",
     "editor.fontSize": 13,
     "editor.fontLigatures": true,
-    "workbench.colorTheme": "GitHub Dark",
     "[go]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
@@ -14,5 +13,7 @@
     },
     "go.inlayHints.assignVariableTypes": true,
     "go.inlayHints.constantValues": true,
+    "go.inlayHints.rangeVariableTypes": true,
+    "go.inlayHints.functionTypeParameters": true,
     "go.inferGopath": true
 }
