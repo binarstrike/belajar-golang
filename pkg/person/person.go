@@ -1,8 +1,10 @@
 package person
 
+// jika ingin menambahkan lebih dari satu tag pada struct bisa dengan memisahkannya dengan spasi
 type Person struct {
-	FirstName, LastName string
-	Age                 int
+	FirstName string `json:"first_name" required:"true"`
+	LastName  string `json:"last_name" required:"false"`
+	Age       int    `json:"age" required:"true"`
 }
 
 func (p *Person) SetPersonFirstName(firstName string) {
