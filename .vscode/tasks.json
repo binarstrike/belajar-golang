@@ -3,19 +3,29 @@
   "windows": {
     "options": {
       "shell": {
-        "executable": "pwsh",
-        "args": [
-          "-NoProfile",
-          "-Command"
-        ]
+        "executable": "cmd",
+        "args": ["/C"]
+      }
+    }
+  },
+  "linux": {
+    "options": {
+      "shell": {
+        "executable": "sh",
+        "args": ["-c"]
       }
     }
   },
   "tasks": [
     {
-      "label": "Build and run",
+      "label": "Run",
       "type": "shell",
-      "command": "if ($(echo \"${fileExtname}\") -ne $(echo \".go\")) { exit 1 } else { go run ${file} }",
+      "windows": {
+        "command": "if not '${fileExtname}' == '.go' (exit 1) else (go run \"${file}\")"
+      },
+      "linux": {
+        "command": "\"[ ! '${fileExtname}' = '.go' ] && exit 1 || go run \"${file}\"\""
+      },
       "group": {
         "kind": "build",
         "isDefault": true
@@ -28,6 +38,33 @@
         "statusbar": {
           "icon": {
             "id": "run"
+          },
+          "backgroundColor": "statusBarItem.warningBackground",
+          "filePattern": "\\.go$"
+        }
+      }
+    },
+    {
+      "label": "Run -race",
+      "type": "shell",
+      "windows": {
+        "command": "if not '${fileExtname}' == '.go' (exit 1) else (go run -race \"${file}\")"
+      },
+      "linux": {
+        "command": "\"[ ! '${fileExtname}' = '.go' ] && exit 1 || go run -race '${file}'\""
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "icon": {
+        "color": "terminal.ansiMagenta",
+        "id": "terminal-powershell"
+      },
+      "options": {
+        "statusbar": {
+          "icon": {
+            "id": "debug-alt-small"
           },
           "backgroundColor": "statusBarItem.warningBackground",
           "filePattern": "\\.go$"
