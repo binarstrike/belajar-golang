@@ -10,3 +10,5 @@ require (
 )
 
 require github.com/inancgumus/prettyslice v0.0.0-20190305220808-d802ba58098f
+
+require github.com/goccy/go-json v0.10.2
