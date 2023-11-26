@@ -19,7 +19,9 @@ Membuat Slice dari Array
   - array[:] Membuat slice dari array dimulai index 0 sampai index akhir di array
 */
 func main() {
-	yellowBg := color.New(color.BgYellow)
+	sepLine := func() {
+		color.New(color.BgHiCyan).Println("=================================================")
+	}
 	printMe := color.New(color.Bold, color.FgHiGreen)
 	days := [7]string{"Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"}
 
@@ -30,8 +32,8 @@ func main() {
 
 	pretty.Show("Hari Libur:", hariLibur)
 
-	// saat melakukan slice pada sebuah array maka array tersebut saling terhubung atau saling reference dari
-	// variabel yang terdapat slice tersebut. Jadi jika terjadi perubahan data pada variabel yang terdapat array yang
+	// saat membuat slice dari sebuah array maka array tersebut saling terhubung atau saling reference dari
+	// dengan slice tersebut. Jadi jika terjadi perubahan data pada variabel yang terdapat array yang
 	// di slice maka array asal atau aslinya akan ikut berubah juga.
 	hariLibur[0] = "Senin"
 	hariLibur[1] = "Senin"
@@ -40,7 +42,7 @@ func main() {
 	// append()
 	// fungsi append digunakan untuk menambah data baru pada indeks terkahir sebuah array namun jika
 	// data pada array sudah penuh maka akan membuat array baru dengan data yang ditambahkan tersebut
-	yellowBg.Println("=================================================")
+	sepLine()
 	colors := [7]string{"Red", "Blue", "Cyan", "Yellow", "Green", "Aquamarine", "Magenta"}
 	pretty.Show("colors", colors[:])
 
@@ -53,7 +55,7 @@ func main() {
 	// Red, Blue, Cyan, Yellow, Green, Aquamarine, Magenta
 	// colorSlice1Append menjadi array baru yang tidak ter reference pada array asal yaitu colors
 	// karena tidak dapat dilakukan penambahan data pada array slice yang sudah mencapai indeks terkahir
-	yellowBg.Println("=================================================")
+	sepLine()
 
 	pretty.Show("colors", colors[:])
 	colorSlice2 := colors[1:4] // Blue, Cyan, Yellow | dari indeks 1 hingga indeks 3
@@ -66,7 +68,7 @@ func main() {
 	// data pada array colors akan ikut terganti karena saat melakukan penambahan data pada array slice
 	// colorSlice2 belum mencapai indeks terakhir jadi data akan ditambahakan dan menggantikan data
 	// pada indeks 4 yaitu "Green"
-	yellowBg.Println("=================================================")
+	sepLine()
 
-	printMe.Printf("\n%d\n%s\n", cap(colors[3:]), colors[3:])
+	printMe.Printf("\n\ncap: %d\n%#v\n", cap(colors[3:]), colors[3:])
 }
