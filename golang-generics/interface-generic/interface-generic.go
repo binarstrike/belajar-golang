@@ -45,5 +45,6 @@ func main() {
 		oilCapacity:  1.5,
 	}
 
+	fmt.Printf("%#v\n", motor1)
 	describeMotor(motor1)
 }
