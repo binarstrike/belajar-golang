@@ -8,7 +8,7 @@
         "editor.formatOnSave": true,
         "files.eol": "\n",
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": "explicit"
         }
     },
     "go.inlayHints.assignVariableTypes": true,
