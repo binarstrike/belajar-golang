@@ -1,3 +1,0 @@
-[submodule "cmd/quotes-api/data"]
-	path = cmd/quotes-api/data
-	url = https://github.com/JamesFT/Database-Quotes-JSON
