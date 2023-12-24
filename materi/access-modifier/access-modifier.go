@@ -25,7 +25,7 @@ import (
 
 func main() {
 	fmt.Println(pkgaccessmodifier.Hello, "Udin")
-	// fmt.Println(coba.hi, "Ucup") // ini akan error karena varibel diawali huruf kecil
+	// fmt.Println(coba.hi, "Ucup") // ini akan error karena variabel diawali huruf kecil
 
 	pkgaccessmodifier.SayHello("Budi")
 	// coba.sayHi("Otong") // error
