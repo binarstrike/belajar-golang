@@ -65,7 +65,7 @@ func quotesHandler(quotes []QuotesData) http.Handler {
 			if err != nil {
 				log.Println(err)
 				w.WriteHeader(http.StatusInternalServerError)
-				w.Write([]byte("Internal server error: " + err.Error()))
+				w.Write([]byte("Internal Server Error: " + err.Error()))
 				return
 			}
 

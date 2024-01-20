@@ -42,6 +42,23 @@ func main() {
 	delete(post1, "wrong_data")
 	printMe.Printf("\npost1: %v\n", post1)
 	printMe.Printf("panjang dari map post1: %d\n", len(post1))
+
+	pemisah()
+
+	names := make(map[int]string)
+	names[1] = "Budi"
+
+	// variabel kedua pada saat mengakses map adalah nilai boolean yang akan digunakan untuk pengecekan jika nilai yang
+	// diakses pada map tidak kosong
+	if name, ok := names[1]; ok {
+		printMe.Printf("nama ditemukan pada key 1: %s\n", name)
+	}
+
+	if name, ok := names[5]; ok {
+		printMe.Printf("nama ditemukan pada key 5: %s\n", name)
+	} else {
+		printMe.Println("nama tidak ditemukan pada key 5")
+	}
 }
 
 func pemisah() {

@@ -11,11 +11,11 @@ func main() {
 	p1 := &person.Person{FirstName: "Ucup", LastName: "Santoso", Age: 18}
 
 	fmt.Printf("p1: %#v\n", p1)
-	p1.SetPersonFirstName("Albert")
+	p1.SetFirstName("Albert")
 	fmt.Printf("p1: %#v\n", p1)
-	p1.SetPersonLastName("Supradi")
+	p1.SetLastName("Supradi")
 	fmt.Printf("p1: %#v\n", p1)
-	p1.SetPersonAge(20)
+	p1.SetAge(20)
 	fmt.Printf("p1: %#v\n\n", p1)
 
 	miya := &hero.Hero{

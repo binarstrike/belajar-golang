@@ -19,23 +19,23 @@ func main() {
 	tnow := time.Now()
 
 	go func() {
-		time.Sleep(time.Millisecond * 1000)
+		// delay untuk melihat kalau terjadi blocking di pengiriman data pada channel
+		time.Sleep(time.Second * 1)
 		for {
-			data := <-c1
-			fmt.Println("data diterima <-:", data, time.Duration(time.Since(tnow).Milliseconds()))
+			fmt.Println("data diterima <-:", <-c1, time.Duration(time.Since(tnow).Milliseconds()))
 		}
 	}()
 
-	// data akan menumpuk pada antrian dengan maksimal data yang bisa ditumpuk 4 dan jika belum ada goroutine lain
-	// yang siap menerima data dari channel c1 maka akan terjadi blocking pada perulangan ke 5 dan akan menunggu hingga
+	// data akan menumpuk pada antrian dengan maksimal data yang bisa ditumpuk 3 dan jika belum ada goroutine lain
+	// yang siap menerima data dari channel c1 maka akan terjadi blocking pada perulangan ke 3 dan akan menunggu hingga
 	// ada goroutine lain yang akan menerima data.
 	for i := 1; i <= 10; i++ {
-		time.Sleep(time.Millisecond * 100)
+		// time.Sleep(time.Millisecond * 100)
+		c1 <- fmt.Sprint("data ", i)
 		fmt.Println("data terkirim ->: data", i, time.Duration(time.Since(tnow).Milliseconds()))
-		c1 <- fmt.Sprintf("data %d", i)
 	}
 
-	time.Sleep(time.Second * 5)
+	time.Sleep(time.Second * 3)
 
 }
 
