@@ -1,36 +1,36 @@
-Param([String]$GoFileParam)
+Param([string]$FileDir)
 
-If ([String]::IsNullOrEmpty($GoFileParam)) {
-  Write-Host "Usage: .\runAndWatch.ps1 <path to go file>"
+if ([string]::IsNullOrEmpty($FileDir)) {
+  Write-Host "Usage: .\runAndWatch.ps1 [-File] <file or directory>"
   exit 1
 }
 
-If (-Not (Test-Path $GoFileParam)) {
-  Write-Host "Can't find go file, $GoFileParam no such file or directory"
+if (-not (Test-Path $FileDir)) {
+  Write-Host "$FileDir no such file or directory"
   exit 1
 }
 
-If (-Not (Get-Command nodemon -ErrorAction SilentlyContinue)) {
+if (-not (Get-Command nodemon -ErrorAction SilentlyContinue)) {
   Write-Host "nodemon command does not exist"
   exit 1
 }
 
-$ScriptLocation = $PSScriptRoot
+$BuildTemp = Join-Path $env:TEMP "build"
 
-$BuildDir = Join-Path $ScriptLocation "build"
-
-If (-Not (Test-Path $BuildDir -ErrorAction SilentlyContinue)) {
-  New-Item -ItemType Directory $BuildDir
+if (-not (Test-Path $BuildTemp)) {
+  [void](New-Item -ItemType Directory $BuildTemp)
 }
 
-$GoFile = Get-ChildItem $GoFileParam
-$GoFileBasename = $GoFile | % {$_.BaseName} 
-$GoFileFullName = $GoFile | % {$_.FullName}
+$FileDirPath = Get-ChildItem $FileDir
 
-$OutputBinary = Join-Path $BuildDir "$GoFileBasename.exe"
-$NodemonConfigFilePath = Join-Path $ScriptLocation "nodemon.json"
+if (Test-Path $FileDir -PathType Leaf) {
+  $BinaryOutputName = Join-Path $BuildTemp ($FileDirPath.BaseName + ".exe")
+  $InputFileDir = $FileDirPath.FullName
+} else {
+  $BinaryOutputName = Join-Path $BuildTemp "main.exe"
+  $InputFileDir = $FileDirPath.Directory.FullName + "\..."
+}
 
-# $Command = "nodemon --config $NodemonConfigFilePath --exec 'go run $GoFileFullName'"
-$Command = "nodemon --config $NodemonConfigFilePath --exec 'go build -o $OutputBinary $GoFileFullName && $OutputBinary'"
+$Command = "nodemon -e go,html,css,js,json -w {0} --exec 'go build -o {1} {2} && {1}'" -f $FileDirPath.Directory.FullName, $BinaryOutputName, $InputFileDir
 
-Invoke-Expression $Command
+$Command | Invoke-Expression
