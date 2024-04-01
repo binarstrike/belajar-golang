@@ -1,7 +1,7 @@
 Param([string]$FileDir)
 
 if ([string]::IsNullOrEmpty($FileDir)) {
-  Write-Host "Usage: .\runAndWatch.ps1 [-File] <file or directory>"
+  Write-Host "Usage: $PSCommandPath [-FileDir] <file or directory>"
   exit 1
 }
 
